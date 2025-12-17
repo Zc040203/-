@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海南软件职业技术学院 - 第26届运动会报名系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .header {
+            background-image: url("images/sports.jpg"); /* 图片放在images文件夹，命名为sports.jpg */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .header h1, .header p {
+            position: relative;
+            z-index: 1;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .notice, .form-section, .project-list {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            flex: 1;
+            min-width: 300px;
+        }
+        h2 {
+            color: #d32f2f;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .notice p {
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+        .project-list .sports-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .project-list ul {
+            list-style: none;
+        }
+        .project-list li {
+            padding: 0.8rem;
+            margin-bottom: 0.5rem;
+            border-left: 4px solid #2196f3;
+            background-color: #f9f9f9;
+            border-radius: 0 4px 4px 0;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #2196f3;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #b71c1c;
+        }
+        .footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+            color: #666;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部标题 -->
+    <div class="header">
+        <h1>海南软件职业技术学院 第26届运动会 线上报名系统</h1>
+        <p>青春无畏 · 逐梦赛场 | 海软运动季</p >
+    </div>
+
+    <div class="container">
+        <!-- 报名须知 -->
+        <div class="notice">
+            <h2>报名须知</h2>
+            <p>1. 报名时间：2025年12月17日 - 2025年12月21日</p >
+            <p>2. 参赛对象：海南软件职业技术学院全体在校学生、教职工</p >
+            <p>3. 每人限报2个个人项目 + 1个集体项目</p >
+            <p>4. 报名信息提交后不可修改，请仔细核对</p >
+            <p>5. 咨询电话：0898-542526（学校体育部）</p >
+        </div>
+
+        <!-- 项目列表 -->
+        <div class="project-list">
+            <h2>竞赛项目</h2>
+            <!-- 嵌入运动图片 -->
+            < "运动会田径项目" >
+            <ul>
+                <li><strong>个人项目</strong>：100米、200米、400米、800米、1500米、跳远、跳高、铅球</li>
+                <li><strong>集体项目</strong>：4×100米接力、4×400米接力、拔河、跳绳团体赛</li>
+                <li><strong>趣味项目</strong>：两人三足、袋鼠跳、障碍接力赛</li>
+            </ul>
+        </div>
+
+        <!-- 报名表单 -->
+        <div class="form-section">
+            <h2>我要报名</h2>
+            <form id="sportsForm">
+                <div class="form-group">
+                    <label for="name">姓名</label>
+                    <input type="text" id="name" placeholder="请输入姓名" required>
+                </div>
+                <div class="form-group">
+                    <label for="stuId">学号/工号</label>
+                    <input type="text" id="stuId" placeholder="请填写学号/工号" required>
+                </div>
+                <div class="form-group">
+                    <label for="grade">年级/部门</label>
+                    <input type="text" id="grade" placeholder="例如：23网络技术303 / " required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">联系电话</label>
+                    <input type="tel" id="phone" placeholder="请输入手机号" required>
+                </div>
+                <div class="form-group">
+                    <label for="project1">个人项目1</label>
+                    <select id="project1" required>
+                        <option value="">-- 请选择项目 --</option>
+                        <option value="跳远">跳远</option>
+                        <option value="跳高">跳高</option>
+                        <option value="铅球">铅球</option>
+                         <option value="跳绳">跳绳</option>
+                          <option value="三级跳">三级跳</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="project2">个人项目2（可选）</label>
+                    <select id="project2">
+                        <option value="">-- 请选择项目 --</option>
+                        <option value="100米">100米</option>
+                        <option value="200米">200米</option>
+                        <option value="400米">400米</option>
+                        <option value="800米">800米</option>
+                        <option value="1500米">1500米</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="teamProject">集体项目</label>
+                    <select id="teamProject" required>
+                        <option value="">-- 请选择项目 --</option>
+                        <option value="男子4×100米接力">男子4×100米接力</option>
+                         <option value="女子4×100米接力">女子4×100米接力</option>
+                         <option value="女子4×200米接力">女子4×200米接力</option>
+                         <option value="男子4×200米接力">男子4×200米接力</option>
+                        <option value="拔河《五人一组》">拔河《五人一组》</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="remark">备注</label>
+                    <textarea id="remark" rows="3" placeholder="例如：个体有过伤势请备注，团队比赛备注管理者"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">提交报名信息</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 海南软件职业技术学院体育部 版权所有</p >
+    </div>
+
+    <script>
+        // 表单提交验证
+        document.getElementById('sportsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // 获取表单数据
+            const formData = {
+                name: document.getElementById('name').value,
+                stuId: document.getElementById('stuId').value,
+                grade: document.getElementById('grade').value,
+                phone: document.getElementById('phone').value,
+                project1: document.getElementById('project1').value,
+                project2: document.getElementById('project2').value,
+                teamProject: document.getElementById('teamProject').value,
+                remark: document.getElementById('remark').value
+            };
+            // 模拟提交成功提示
+            alert('报名信息提交成功！请等待学校体育部审核通知~');
+            // 重置表单
+            this.reset();
+        });
+    </script>
+</body>
+</html>
